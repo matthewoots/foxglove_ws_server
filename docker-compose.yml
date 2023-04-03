@@ -1,0 +1,20 @@
+services:
+  base:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+      target: base
+
+  build:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+      target: build
+
+  example_server:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+      target: example_server
+    ports:
+      - "8765:8765"
